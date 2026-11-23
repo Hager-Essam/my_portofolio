@@ -98,7 +98,7 @@ const Skills = () => {
         </motion.h2>
 
         <div className="skills-grid">
-          {skillCategories.map((category, categoryIndex) => (
+          {skillCategories.map((category) => (
             <motion.div
               key={category.title}
               className="skill-category"
@@ -106,7 +106,7 @@ const Skills = () => {
             >
               <h3 className="category-title">{category.title}</h3>
               <div className="skills-list">
-                {category.skills.map((skill, skillIndex) => (
+                {category.skills.map((skill) => (
                   <motion.div
                     key={skill.name}
                     className="skill-item"
