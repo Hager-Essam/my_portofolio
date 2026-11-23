@@ -35,7 +35,7 @@ const Contact = () => {
       title: 'Email',
       value: 'hageressam23720@gmail.com',
       display: 'hageressam23720@gmail.com',
-      link: 'mailto:hageressam23720@gmail.com',
+      link: 'https://mail.google.com/mail/?view=cm&fs=1&to=hageressam23720@gmail.com&su=Portfolio%20Inquiry',
     },
     {
       icon: <FaPhone />,
@@ -102,6 +102,7 @@ const Contact = () => {
 
           <div className="contact-methods">
             {contactMethods.map((method, index) => (
+              
               <motion.a
                 key={index}
                 href={method.link}
@@ -121,6 +122,7 @@ const Contact = () => {
                   <FaArrowRight />
                 </span>
               </motion.a>
+
             ))}
           </div>
 
