@@ -148,7 +148,6 @@ const Projects = () => {
             }}
             pagination={{
               clickable: true,
-              dynamicBullets: true,
               el: '.swiper-pagination-custom',
             }}
             navigation={{

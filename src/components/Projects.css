@@ -7,22 +7,27 @@
 .projects-subtitle {
   text-align: center;
   color: var(--text-secondary);
-  font-size: 1.1rem;
-  margin-bottom: 60px;
+  font-size: 1rem;
+  margin-bottom: 24px;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
+#projects .section-title {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+}
+
 .projects-carousel {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 0;
 }
 
 .projects-swiper {
   width: 100%;
-  padding: 50px 0 40px;
+  padding: 12px 0 4px;
 }
 
 .projects-swiper .swiper-slide {
@@ -33,7 +38,7 @@
 /* Simple Project Card (Just Image) */
 .project-card-simple {
   width: 100%;
-  height: 280px;
+  height: clamp(200px, 34vh, 300px);
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
@@ -339,9 +344,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  margin-top: 40px;
-  padding: 20px;
+  gap: 18px;
+  margin-top: 14px;
+  padding: 0;
 }
 
 /* Hide default side arrows */
@@ -353,12 +358,14 @@
 /* Custom navigation buttons below */
 .swiper-button-next-custom,
 .swiper-button-prev-custom {
-  width: 45px;
-  height: 45px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  width: 42px;
+  height: 42px;
+  margin: 0;
+  padding: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 50%;
-  color: var(--text-primary);
+  color: var(--accent-primary);
   transition: all 0.3s ease;
   cursor: pointer;
   display: flex;
@@ -372,10 +379,12 @@
 .swiper-button-prev-custom::after {
   content: '';
   position: absolute;
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid var(--text-primary);
-  border-bottom: 2px solid var(--text-primary);
+  width: 9px;
+  height: 9px;
+  margin: 0;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transition: border-color 0.3s ease;
 }
 
 .swiper-button-prev-custom::after {
@@ -390,75 +399,57 @@
 
 .swiper-button-next-custom:hover,
 .swiper-button-prev-custom:hover {
-  background: rgba(6, 182, 212, 0.1);
-  border-color: var(--accent-primary);
-  transform: scale(1.1);
+  background: var(--accent-gradient);
+  border-color: transparent;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(6, 182, 212, 0.35);
+}
+
+.swiper-button-next-custom:hover::after,
+.swiper-button-prev-custom:hover::after {
+  border-color: #ffffff;
 }
 
 .swiper-button-next-custom.swiper-button-disabled,
 .swiper-button-prev-custom.swiper-button-disabled {
-  opacity: 0.3;
+  opacity: 0.35;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
-/* Swiper Pagination - Integrated with navigation */
-.projects-swiper .swiper-pagination {
+/* Swiper Pagination - sits between the arrows */
+.swiper-navigation-wrapper .swiper-pagination {
   position: static;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 8px;
-  margin: 0;
-  flex: 1;
-  max-width: 400px;
-}
-
-.projects-swiper .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.3);
-  opacity: 1;
-  transition: all 0.3s ease;
-  margin: 0 !important;
-  border-radius: 50%;
-}
-
-.projects-swiper .swiper-pagination-bullet-active {
-  background: var(--accent-primary);
-  width: 35px;
-  height: 8px;
-  border-radius: 4px;
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.6);
-}
-
-/* Swiper Pagination - Integrated with navigation */
-.projects-swiper .swiper-pagination {
-  position: static;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 8px;
+  gap: 6px;
+  width: auto;
   margin: 0;
-  flex: 1;
-  max-width: 400px;
+  flex: 0 0 auto;
 }
 
-.projects-swiper .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.3);
-  opacity: 1;
-  transition: all 0.3s ease;
+.swiper-navigation-wrapper .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
   margin: 0 !important;
+  background: var(--text-secondary);
+  opacity: 0.35;
   border-radius: 50%;
+  transition: width 0.3s ease, opacity 0.3s ease, background 0.3s ease;
 }
 
-.projects-swiper .swiper-pagination-bullet-active {
-  background: var(--accent-primary);
-  width: 35px;
-  height: 8px;
+.swiper-navigation-wrapper .swiper-pagination-bullet:hover {
+  opacity: 0.7;
+}
+
+.swiper-navigation-wrapper .swiper-pagination-bullet-active {
+  width: 26px;
   border-radius: 4px;
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.6);
+  background: var(--accent-gradient);
+  opacity: 1;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.5);
 }
 
 /* Responsive */
@@ -466,20 +457,22 @@
   .projects-swiper .swiper-slide {
     width: 380px;
   }
-
-  .project-card-simple {
-    height: 250px;
-  }
 }
 
 @media (max-width: 768px) {
+  #projects .section-title {
+    font-size: 1.9rem;
+    margin-bottom: 12px;
+  }
+
+  .projects-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
   .projects-swiper .swiper-slide {
     width: 90%;
     max-width: 380px;
-  }
-
-  .project-card-simple {
-    height: 220px;
   }
 
   .modal-banner {
@@ -516,7 +509,7 @@
 @media (max-width: 480px) {
   .projects-subtitle {
     font-size: 0.95rem;
-    margin-bottom: 40px;
+    margin-bottom: 16px;
   }
 
   .projects-swiper .swiper-slide {
@@ -525,7 +518,7 @@
   }
 
   .project-card-simple {
-    height: 200px;
+    height: clamp(170px, 26vh, 210px);
   }
 
   .project-title-overlay {
