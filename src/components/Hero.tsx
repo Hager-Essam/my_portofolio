@@ -38,8 +38,8 @@ const Hero = () => {
   const socialLinks = [
     { icon: <FaGithub />, url: 'https://github.com/Hager-Essam', label: 'GitHub' },
     { icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/hager-essam-he/', label: 'LinkedIn' },
-    { icon: <FaEnvelope />, url: 'hageressam23720@gmail.com', label: 'Email' },
-    { icon: <FaWhatsapp />, url: 'https://wa.me/01020847912', label: 'WhatsApp' }
+    { icon: <FaEnvelope />, url: 'https://mail.google.com/mail/?view=cm&fs=1&to=hageressam23720@gmail.com&su=Portfolio%20Inquiry', label: 'Email' },
+    { icon: <FaWhatsapp />, url: 'https://wa.me/201020847912', label: 'WhatsApp' }
   ];
 
   return (

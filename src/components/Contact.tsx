@@ -49,7 +49,7 @@ const Contact = () => {
       title: 'Location',
       value: 'AlGiza, Egypt',
       display: 'AlGiza, Egypt',
-      link: '#',
+      link: 'https://www.google.com/maps/search/?api=1&query=Giza%2C%20Egypt',
     },
     {
       icon: <FaLinkedin />,
